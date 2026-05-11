@@ -38,7 +38,10 @@ jobs:
         # npm Trusted Publishing requires.
         working-directory: js
         run: |
-          corepack enable
+          # `corepack enable` alone only shims yarn/pnpm; npm needs to be
+          # opted-in explicitly, otherwise the system npm (10.x on Node 22)
+          # stays on PATH and Trusted Publishing fails with a 404.
+          corepack enable npm
           corepack prepare --activate
           npm --version
       - run: npm ci || npm install
