@@ -31,15 +31,16 @@ jobs:
           # Node 22 still ships with npm 10.x, so we upgrade npm below.
           node-version: "22"
           registry-url: "https://registry.npmjs.org"
-      - name: Install npm 11 (required for Trusted Publishing)
-        # In-place self-upgrade (`npm i -g npm@X`) crashes with MODULE_NOT_FOUND
-        # because the running npm clobbers its own deps mid-install. Installing
-        # into a separate prefix and prepending it to PATH avoids that.
+      - name: Activate npm version pinned in package.json (via corepack)
+        # `packageManager: "npm@X.Y.Z"` in js/package.json is the source of
+        # truth; corepack installs that exact version. This keeps the local
+        # dev npm and the CI npm in lockstep, and ensures the >=11.5.1 that
+        # npm Trusted Publishing requires.
+        working-directory: js
         run: |
-          npm install -g --prefix="$RUNNER_TEMP/npm" npm@11.14.1
-          echo "$RUNNER_TEMP/npm/bin" >> "$GITHUB_PATH"
-      - name: Verify npm version
-        run: npm --version
+          corepack enable
+          corepack prepare --activate
+          npm --version
       - run: npm ci || npm install
       - name: Sync version from tag
         run: npm version --no-git-tag-version --allow-same-version "${GITHUB_REF_NAME#js/v}"
