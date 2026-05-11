@@ -92,7 +92,10 @@ Encoded in `scripts/gen.go`:
   `svgz`, `x3dz`.
 - **Extra extensions** added beyond `mime-db`:
   `bin`, 3D Tiles (`b3dm`, `i3dm`, `pnts`, `cmpt`, `subtree`),
-  Cesium terrain (`terrain`).
+  Cesium terrain (`terrain`), Mapbox Vector Tile (`mvt`),
+  line-delimited JSON (`ndjson`, `jsonl`),
+  geospatial text (`wkt`, `czml`, `topojson`),
+  Protocol Buffers (`pb`, `pbf`, `proto`).
 
 ## License
 

@@ -66,6 +66,19 @@ var extraExts = []string{
 	"subtree",
 	// Cesium quantized-mesh terrain
 	"terrain",
+	// Mapbox Vector Tile (protobuf-encoded; IANA: application/vnd.mapbox-vector-tile)
+	"mvt",
+	// Line-delimited JSON
+	"ndjson",
+	"jsonl",
+	// Geospatial text formats
+	"wkt",
+	"czml",
+	"topojson",
+	// Protocol Buffers
+	"pb",
+	"pbf",
+	"proto",
 }
 
 type entry struct {
