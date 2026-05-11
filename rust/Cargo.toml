@@ -1,0 +1,16 @@
+[package]
+name = "reearth-compressible"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "Tells you whether a file extension is worth gzip-compressing. Curated from jshttp/mime-db."
+repository = "https://github.com/reearth/compressible"
+homepage = "https://github.com/reearth/compressible"
+documentation = "https://docs.rs/reearth-compressible"
+readme = "../README.md"
+keywords = ["gzip", "compressible", "mime", "cdn"]
+categories = ["compression", "web-programming"]
+
+[lib]
+name = "compressible"
+path = "src/lib.rs"

@@ -1,0 +1,19 @@
+# Go
+go/vendor/
+
+# JS
+js/node_modules/
+js/dist/
+js/.turbo/
+js/coverage/
+js/*.tgz
+
+# Rust
+rust/target/
+rust/Cargo.lock
+
+# Editors / OS
+.DS_Store
+.idea/
+.vscode/
+*.swp
