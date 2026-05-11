@@ -33,8 +33,6 @@ jobs:
       - name: Sync version from tag
         run: npm version --no-git-tag-version --allow-same-version "${GITHUB_REF_NAME#js/v}"
       - run: npm publish --provenance --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
   # Rust publish is intentionally disabled for now — enable when ready to
   # release `reearth-compressible` to crates.io.

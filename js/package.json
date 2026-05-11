@@ -1,6 +1,6 @@
 {
   "name": "@reearth/compressible",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Tells you whether a file extension is worth gzip-compressing. Curated from jshttp/mime-db.",
   "license": "MIT",
   "repository": {
