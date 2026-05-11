@@ -9,7 +9,7 @@ list (~230 entries) generated from [jshttp/mime-db]:
 
 | Language          | Package                                          |
 | ----------------- | ------------------------------------------------ |
-| Go                | `github.com/reearth/compressible`                |
+| Go                | `github.com/reearth/compressible/go`             |
 | TypeScript / JS   | `@reearth/compressible` (ESM + CJS)              |
 
 ## Why not just use mime-db's `compressible` flag?
@@ -28,11 +28,11 @@ re-implemented in every uploader / CDN tool.
 ### Go
 
 ```bash
-go get github.com/reearth/compressible
+go get github.com/reearth/compressible/go
 ```
 
 ```go
-import "github.com/reearth/compressible"
+import compressible "github.com/reearth/compressible/go"
 
 compressible.Ext("js")          // true
 compressible.Ext(".JSON")       // true
