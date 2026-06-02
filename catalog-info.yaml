@@ -1,0 +1,19 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: compressible
+  namespace: reearth
+  description: Tells you whether a file extension is worth gzip-compressing. Curated
+    from jshttp/mime-db. Available for Go, TypeScript/JS, and Rust.
+  annotations:
+    github.com/project-slug: reearth/compressible
+  links:
+  - url: https://github.com/reearth/compressible
+    title: GitHub
+    icon: github
+  tags:
+  - go
+spec:
+  type: service
+  lifecycle: production
+  owner: reearth/sre
